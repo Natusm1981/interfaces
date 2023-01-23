@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 public class Ex2 {
@@ -16,6 +17,16 @@ public class Ex2 {
         System.out.println(">>>>>> ordem Natural");
         Collections.sort(lista);;
         System.out.println(lista);
+        System.out.println(">>>>> Por idade");
+        
+        //Collections.sort(lista);
+        //System.out.println(lista);
+
+        lista.sort(Comparator.comparing(Gato::getIdade));
+        System.out.println(lista);
+        lista.sort(Comparator.comparing(Gato::getIdade).thenComparing(Gato::getNome));
+        System.out.println(lista);
+        
 
 
 
